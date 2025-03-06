@@ -8,7 +8,10 @@ function App() {
     <div class="container">
       <div className="row">
         <div className="col">Column</div>
-        <div className="col">Column</div>
+        <div className="col">
+          <p className="lead">{"CSS Gives Your Code Style"}</p>
+          {"CSS"}
+        </div>
         <div className="col">
           <p className="lead">{"Javascript Gives Your Code Action"}</p>
           {"Javascript"}
