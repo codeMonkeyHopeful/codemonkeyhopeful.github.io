@@ -1,5 +1,8 @@
 import "./App.css";
 
+// iframe example that works
+// <iframe srcdoc="<div><h1>test</h1><script>window.alert()</script></div>"  allow-scripts width="100%" height="300" style="border:none;">
+// </iframe>
 function App() {
   return (
     <div className="container">
