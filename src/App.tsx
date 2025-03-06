@@ -5,16 +5,19 @@ import "./App.css";
 
 function App() {
   return (
-    <div class="container">
+    <div className="container">
       <div className="row">
-        <div className="col">Column</div>
+        <div className="col">
+          <p className="lead">{"HTML Gives Your Code Structure"}</p>
+          <strong>{"HTML"}</strong>
+        </div>
         <div className="col">
           <p className="lead">{"CSS Gives Your Code Style"}</p>
-          {"CSS"}
+          <strong>{"CSS"}</strong>
         </div>
         <div className="col">
           <p className="lead">{"Javascript Gives Your Code Action"}</p>
-          {"Javascript"}
+          <strong>{"Javascript"}</strong>
         </div>
       </div>
     </div>
