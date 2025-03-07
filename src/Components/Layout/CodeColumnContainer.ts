@@ -1,6 +1,8 @@
 import React from "react";
 
-export const CodeColumnContainer: React.FC<{ child: string }> = ({ child }) => {
+export const CodeColumnContainer: React.FC<{ languages: Array<string> }> = ({
+  languages,
+}) => {
   //   return <div className="code-column-container">{children}</div>;
-  return child;
+  return languages;
 };
