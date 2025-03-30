@@ -1,5 +1,5 @@
-const { execSync } = require("child_process");
-const moment = require("moment");
+import { execSync } from "child_process";
+import moment from "moment";
 
 // Get the current datetime in a readable format
 const dateTime = moment().format("YYYY-MM-DD HH:mm:ss");
