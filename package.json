@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist",
+    "copy-updates": "git checkout main -- node_modules/ dist/"
   },
   "dependencies": {
     "@koa/router": "^13.1.0",
