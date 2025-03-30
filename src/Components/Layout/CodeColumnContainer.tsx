@@ -1,4 +1,5 @@
 import React from "react";
+import { CodeWindow } from "../Containers";
 
 export const CodeColumnContainer: React.FC<{ languages: Array<string> }> = ({
   languages,
@@ -8,21 +9,7 @@ export const CodeColumnContainer: React.FC<{ languages: Array<string> }> = ({
     <div className="container">
       <div className="row">
         {languages.map((language) => {
-          return (
-            <div className="col" key={language}>
-              <p className="lead">{`${
-                language.charAt(0).toUpperCase() + language.slice(1)
-              } Gives Your Code ${
-                language === "javascript" ? "Action" : "Style"
-              }`}</p>
-              <strong>{language.toUpperCase()}</strong>
-              <textarea
-                className="form-control"
-                placeholder={`${language.toUpperCase()} Goes Here`}
-                id="floatingTextarea"
-              ></textarea>
-            </div>
-          );
+          return <CodeWindow codeLanguage={language} />;
         })}
       </div>
     </div>
