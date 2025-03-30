@@ -11,7 +11,8 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "npm run build && gh-pages -d dist",
-    "copy-updates": "git checkout main -- node_modules/ dist/"
+    "change-branch": "git checkout gh-pages",
+    "copy-necessary-files": "git checkout main -- node_modules/ dist/ assets/ .gitignore index.html package.json vite.config.ts"
   },
   "dependencies": {
     "@koa/router": "^13.1.0",
