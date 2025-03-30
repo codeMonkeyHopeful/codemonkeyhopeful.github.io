@@ -12,7 +12,8 @@
     "predeploy": "npm run build",
     "deploy": "npm run build && gh-pages -d dist",
     "change-branch": "git checkout gh-pages",
-    "copy-necessary-files": "git checkout main -- node_modules/ dist/ assets/ .gitignore index.html package.json vite.config.ts tsconfig.app.json tsconfig.json tsconfig.node.json"
+    "copy-necessary-files": "git checkout main -- node_modules/ dist/ assets/ .gitignore index.html package.json vite.config.ts tsconfig.app.json tsconfig.json tsconfig.node.json scripts/",
+    "create-commit-message": "node /scripts/createCommitMessage.js"
   },
   "dependencies": {
     "@koa/router": "^13.1.0",
