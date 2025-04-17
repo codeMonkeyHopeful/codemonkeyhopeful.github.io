@@ -3,6 +3,10 @@ import { execSync } from "child_process";
 import { commands } from "./commands.js";
 
 const runScripts = async () => {
+  const currentBranch = await execSync("git branch --show-current")
+    .toString()
+    .trim();
+
   console.log("Running scripts. Time is " + new Date().toLocaleTimeString());
   for (const command in commands) {
     console.log(`Running ${commands[command].name} command.`);
@@ -23,6 +27,11 @@ const runScripts = async () => {
       //IMPORTANT: We need to break the loop if any command fails.
       throw new Error(
         `Error running ${commands[command].name} command: ${error.message}`
+      );
+    } finally {
+      await execSync(`git checkout ${currentBranch}`);
+      console.log(
+        `Checked out to ${currentBranch} branch. Time is ${new Date().toLocaleTimeString()}`
       );
     }
   }
