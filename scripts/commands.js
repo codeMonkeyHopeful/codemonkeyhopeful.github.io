@@ -14,7 +14,7 @@ export const commands = {
   },
   restore: {
     name: "Restore",
-    command: `git restore --source=${branchToMirror} .gitignore index.html package.json vite.config.ts tsconfig.app.json tsconfig.json tsconfig.node.json scripts/`,
+    command: `git restore --source=${branchToMirror} scripts/ src/ .gitignore index.html package.json vite.config.ts tsconfig.app.json tsconfig.json tsconfig.node.json`,
     description: "Restoring from main branch",
   },
   install: {
