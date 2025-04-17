@@ -1,5 +1,3 @@
-import { build } from "vite";
-
 export const commands = {
   restore: {
     name: "Restore",
@@ -16,5 +14,10 @@ export const commands = {
     name: "Build",
     command: "npm run build",
     description: "Building the project",
+  },
+  commit: {
+    name: "Commit",
+    command: "npm run commit",
+    description: "Committing the project",
   },
 };
