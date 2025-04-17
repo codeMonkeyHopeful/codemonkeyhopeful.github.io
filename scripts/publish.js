@@ -1,25 +1,52 @@
 // This file is our main file for publishing the project. It will run the scripts in the correct order and handle errors.
 import { exec } from "child_process";
 import chalk from "chalk";
-import { restoreFromMain, installDependencies } from "./index.js";
 
-console.log("Running scripts. Time is " + new Date().toLocaleTimeString());
+const commands = {
+  restore: {
+    name: "Restore",
+    action:
+      "git restore  --source=main .gitignore index.html package.json vite.config.ts tsconfig.app.json tsconfig.json tsconfig.node.json scripts/",
+    description: "Restoring from main branch",
+  },
+  install: {
+    name: "Install",
+    action: "npm install",
+    description: "Installing dependencies",
+  },
+};
 
-try {
-  const responses = [];
-  const restoreFromMainStatus = await restoreFromMain();
-  responses.push(restoreFromMainStatus);
-  const installDependenciesStatus = await installDependencies();
-  responses.push(installDependenciesStatus);
-} catch (error) {
-  console.error(
-    `Something went wrong while ${chalk.purple(
-      "restoring"
-    )} from ${chalk.purple(
-      "main"
-    )} branch. Time is ${new Date().toLocaleTimeString()} - ${error.message}`
+const runScripts = async () => {
+  console.log(
+    chalk.blue("Running scripts. Time is " + new Date().toLocaleTimeString())
   );
-} finally {
-  // We will get passes the breaking error
-  console.log(`. Time is ${new Date().toLocaleTimeString()}`);
-}
+  for (const command in commands) {
+    console.log(chalk.blue(`Running ${commands[command].name} command.`));
+    try {
+      await exec(commands[command].action);
+      console.log(
+        chalk.green(
+          `${
+            commands[command].description
+          } successful. Time is ${new Date().toLocaleTimeString()}`
+        )
+      );
+    } catch (error) {
+      console.error(
+        chalk.red(
+          `Error ${
+            commands[command].description
+          }. Time is ${new Date().toLocaleTimeString()} - ${error.message}`
+        )
+      );
+    }
+  }
+};
+
+runScripts()
+  .then(() => {
+    console.log(chalk.green("All scripts completed successfully."));
+  })
+  .catch((error) => {
+    console.error(chalk.red("Error running scripts: " + error.message));
+  });
