@@ -1,6 +1,6 @@
 import { exec } from "child_process";
 
-const restoreFromMain = async () => {
+export const restoreFromMain = async () => {
   console.log(
     `Restoring from main branch. Time is ${new Date().toLocaleTimeString()}`
   );
