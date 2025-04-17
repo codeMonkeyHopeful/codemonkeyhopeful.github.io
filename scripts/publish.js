@@ -28,11 +28,6 @@ const runScripts = async () => {
       throw new Error(
         `Error running ${commands[command].name} command: ${error.message}`
       );
-    } finally {
-      await execSync(`git checkout ${currentBranch}`);
-      console.log(
-        `Checked out to ${currentBranch} branch. Time is ${new Date().toLocaleTimeString()}`
-      );
     }
   }
 };
