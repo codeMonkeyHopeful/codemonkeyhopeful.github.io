@@ -6,7 +6,10 @@ import { restoreFromMain } from "./index.js";
 console.log("Running scripts. Time is " + new Date().toLocaleTimeString());
 
 try {
+  const responses = [];
   const restoreFromMainStatus = await restoreFromMain();
+
+  responses.push(restoreFromMainStatus);
 } catch (error) {
   console.error(
     `Something went wrong while ${chalk.purple(
@@ -15,4 +18,7 @@ try {
       "main"
     )} branch. Time is ${new Date().toLocaleTimeString()} - ${error.message}`
   );
+} finally {
+  // We will get passes the breaking error
+  console.log(`. Time is ${new Date().toLocaleTimeString()}`);
 }
