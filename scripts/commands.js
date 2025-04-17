@@ -12,7 +12,7 @@ export const commands = {
   restore: {
     name: "Restore",
     command:
-      "git restore  --source=main .gitignore index.html package.json vite.config.ts tsconfig.app.json tsconfig.json tsconfig.node.json scripts/",
+      "git restore --source=main .gitignore index.html package.json vite.config.ts tsconfig.app.json tsconfig.json tsconfig.node.json scripts/",
     description: "Restoring from main branch",
   },
   install: {
@@ -32,7 +32,7 @@ export const commands = {
   },
   push: {
     name: "Push",
-    command: "git push origin gh-pages",
+    command: "",
     description: "Pushing to gh-pages branch",
   },
 };
