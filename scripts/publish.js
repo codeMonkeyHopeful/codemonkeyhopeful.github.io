@@ -26,6 +26,8 @@ const runScripts = async () => {
           }. Time is ${new Date().toLocaleTimeString()} - ${error.message}`
         )
       );
+      //IMPORTANT: We need to break the loop if any command fails.
+      break;
     }
   }
 };
