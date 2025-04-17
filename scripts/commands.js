@@ -1,4 +1,4 @@
-const trackedPagesBranch = "gh-pages";
+const trackedPagesBranch = "gh-pages-test";
 const branchToMirror = "main";
 
 export const commands = {
