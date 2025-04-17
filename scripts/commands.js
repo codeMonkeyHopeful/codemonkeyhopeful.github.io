@@ -1,4 +1,14 @@
 export const commands = {
+  checkout: {
+    name: "Checkout",
+    command: "git checkout gh-pages",
+    description: "Checking out to gh-pages branch",
+  },
+  pull: {
+    name: "Pull",
+    command: "git pull origin gh-pages",
+    description: "Pulling from gh-pages branch",
+  },
   restore: {
     name: "Restore",
     command:
@@ -19,5 +29,10 @@ export const commands = {
     name: "Commit",
     command: "npm run commit",
     description: "Committing the project",
+  },
+  push: {
+    name: "Push",
+    command: "git push origin gh-pages",
+    description: "Pushing to gh-pages branch",
   },
 };
