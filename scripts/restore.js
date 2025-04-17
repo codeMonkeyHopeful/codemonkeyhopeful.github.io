@@ -4,7 +4,12 @@ const restoreFromMain = async () => {
   console.log(
     `Restoring from main branch. Time is ${new Date().toLocaleTimeString()}`
   );
+
   try {
+    await exec(
+      "git restore  --source=main .gitignore index.html package.json vite.config.ts tsconfig.app.json tsconfig.json tsconfig.node.json scripts/ "
+    );
+
     console.log(
       `Restoring from main successful. Time is ${new Date().toLocaleTimeString()}`
     );
