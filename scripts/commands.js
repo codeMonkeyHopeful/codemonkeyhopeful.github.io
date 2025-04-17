@@ -1,18 +1,20 @@
+const trackedPagesBranch = "gh-pages";
+const branchToMirror = "main";
+
 export const commands = {
   checkout: {
     name: "Checkout",
-    command: "git checkout gh-pages",
+    command: `git checkout ${trackedPagesBranch}`,
     description: "Checking out to gh-pages branch",
   },
   pull: {
     name: "Pull",
-    command: "git pull origin gh-pages",
+    command: `git pull origin ${trackedPagesBranch}`,
     description: "Pulling from gh-pages branch",
   },
   restore: {
     name: "Restore",
-    command:
-      "git restore --source=main .gitignore index.html package.json vite.config.ts tsconfig.app.json tsconfig.json tsconfig.node.json scripts/",
+    command: `git restore --source=${branchToMirror} .gitignore index.html package.json vite.config.ts tsconfig.app.json tsconfig.json tsconfig.node.json scripts/`,
     description: "Restoring from main branch",
   },
   install: {
@@ -30,9 +32,10 @@ export const commands = {
     command: "npm run commit",
     description: "Committing the project",
   },
+  // TODO Upate the command to actual push command
   push: {
     name: "Push",
     command: "",
-    description: "Pushing to gh-pages branch",
+    description: `Pushing to ${trackedPagesBranch} branch`,
   },
 };
