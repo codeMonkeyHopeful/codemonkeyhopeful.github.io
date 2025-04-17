@@ -1,20 +1,7 @@
 // This file is our main file for publishing the project. It will run the scripts in the correct order and handle errors.
 import { exec } from "child_process";
+import { commands } from "./commands.js";
 import chalk from "chalk";
-
-const commands = {
-  restore: {
-    name: "Restore",
-    action:
-      "git restore  --source=main .gitignore index.html package.json vite.config.ts tsconfig.app.json tsconfig.json tsconfig.node.json scripts/",
-    description: "Restoring from main branch",
-  },
-  install: {
-    name: "Install",
-    action: "npm install",
-    description: "Installing dependencies",
-  },
-};
 
 const runScripts = async () => {
   console.log(
@@ -23,7 +10,7 @@ const runScripts = async () => {
   for (const command in commands) {
     console.log(chalk.blue(`Running ${commands[command].name} command.`));
     try {
-      await exec(commands[command].action);
+      await exec(commands[command].command);
       console.log(
         chalk.green(
           `${
