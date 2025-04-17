@@ -32,10 +32,9 @@ export const commands = {
     command: "npm run commit",
     description: "Committing the project",
   },
-  // TODO Upate the command to actual push command
   push: {
     name: "Push",
-    command: "",
+    command: `git push origin ${trackedPagesBranch}`,
     description: `Pushing to ${trackedPagesBranch} branch`,
   },
 };
