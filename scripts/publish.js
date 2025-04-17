@@ -1,5 +1,5 @@
 // This file is our main file for publishing the project. It will run the scripts in the correct order and handle errors.
-import { exec } from "child_process";
+import { execSync } from "child_process";
 import { commands } from "./commands.js";
 import chalk from "chalk";
 
@@ -10,7 +10,7 @@ const runScripts = async () => {
   for (const command in commands) {
     console.log(chalk.blue(`Running ${commands[command].name} command.`));
     try {
-      await exec(commands[command].command);
+      await execSync(commands[command].command);
       console.log(
         chalk.green(
           `${
