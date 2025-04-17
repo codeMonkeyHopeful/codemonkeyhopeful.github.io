@@ -1,8 +1,6 @@
 import { execSync } from "child_process";
 import moment from "moment";
-
-// Leverage hoisting so we dont lose this part at the bottom
-commitWithMessage();
+import chalk from "chalk";
 
 const commitWithMessage = async () => {
   // Get the current datetime in a readable format
@@ -31,4 +29,5 @@ const commitWithMessage = async () => {
   );
 };
 
+commitWithMessage();
 // execSync(`git push origin gh-pages`);
