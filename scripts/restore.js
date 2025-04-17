@@ -15,6 +15,7 @@ export const restoreFromMain = async () => {
     );
     return {
       status: "success",
+      step: "restoreFromMain",
       message: "Restoredfrom main branch",
     };
   } catch (error) {
@@ -25,6 +26,7 @@ export const restoreFromMain = async () => {
     );
     return {
       status: "error",
+      step: "restoreFromMain",
       message: error.message,
     };
   }
