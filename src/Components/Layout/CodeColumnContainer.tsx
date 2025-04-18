@@ -11,8 +11,8 @@ export const CodeColumnContainer: React.FC<{ languages: Array<string> }> = ({
         {languages.map((language) => {
           return <CodeWindow codeLanguage={language} />;
         })}
-        <IFrameWindow />
       </div>
+      <IFrameWindow />
     </div>
   );
 };

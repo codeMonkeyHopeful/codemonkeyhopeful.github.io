@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 // </iframe>
 
 export const IFrameWindow: React.FC<{}> = () => {
+  console.log("IFrameWindow");
   return (
     <div className="col" key={"iframe"}>
       <p className="lead">{"Output"}</p>
@@ -12,7 +13,7 @@ export const IFrameWindow: React.FC<{}> = () => {
         srcDoc={`<div><h1>Prepare to be amazed!</h1></div>`}
         width="100%"
         height="300"
-        style={{ border: "none" }}
+        style={{ border: "1px solid red" }}
       ></iframe>
     </div>
   );
