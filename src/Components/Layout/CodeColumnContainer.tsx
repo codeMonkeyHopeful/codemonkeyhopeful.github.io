@@ -1,5 +1,5 @@
 import React from "react";
-import { CodeWindow } from "../Containers";
+import { CodeWindow, IFrameWindow } from "../Containers";
 
 export const CodeColumnContainer: React.FC<{ languages: Array<string> }> = ({
   languages,
@@ -11,6 +11,7 @@ export const CodeColumnContainer: React.FC<{ languages: Array<string> }> = ({
         {languages.map((language) => {
           return <CodeWindow codeLanguage={language} />;
         })}
+        <IFrameWindow />
       </div>
     </div>
   );
