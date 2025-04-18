@@ -1,11 +1,12 @@
 import "./App.css";
-import { CodeColumnContainer, IFrameWindow } from "./Components";
+import { CodeColumnContainer } from "./Components";
+import { columnHeaderMapping } from "./Components";
 
 function App() {
   // const supportedLanguages = ["html", "css", "javascript"];
   return (
     <>
-      <CodeColumnContainer />
+      <CodeColumnContainer languages={Object.keys(columnHeaderMapping)} />
     </>
   );
 }
