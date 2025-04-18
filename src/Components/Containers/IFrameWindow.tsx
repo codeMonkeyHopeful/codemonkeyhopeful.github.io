@@ -10,6 +10,7 @@ export const IFrameWindow: React.FC<{}> = () => {
     <div className="col" key={"iframe"}>
       <p className="lead">{"Output"}</p>
       <iframe
+        id={"iframe-input"}
         srcDoc={`<div><h1>Prepare to be amazed!</h1></div>`}
         width="100%"
         height="300"
