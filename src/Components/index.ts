@@ -1,2 +1,2 @@
 export { CodeColumnContainer } from "./Layout/CodeColumnContainer";
-export { CodeWindow } from "./Containers";
+export { CodeWindow, IFrameWindow } from "./Containers";
